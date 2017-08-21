@@ -1,63 +1,109 @@
 ﻿@model IEnumerable<Web.Models.tblContactViewModel>
 
-@{
-    ViewBag.Title = "Index";
-}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CONTACT</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .titulo {
+            color: midnightblue;
+            font-family: 'Bookman Old Style';
+            font-size: 35px;
+            margin-left: 220PX;
+        }
 
-<h2>Index</h2>
+        input,
+        select,
+        textarea, label {
+            width: 200px;
+            height: 30px;
+            position: center;
+        }
+    </style>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.id_client)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.first_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.web_address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.puesto)
-        </th>
-        <th></th>
-    </tr>
+</head>
+<body>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_client)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.first_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.web_address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tel)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.puesto)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_contact }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_contact }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_contact })
-        </td>
-    </tr>
-}
+    <a href="@Url.Action("SignOut", "Home")">Logout</a>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-success" style="width:80em; height: 34.5em; margin-left: -0.1em; padding: 1em; padding-top: -1EM;  margin-top: 1em; ">
+                <div class="panel-body" style="width: 50em; margin-left: 0em; margin-top: 0em;  padding: 5px 10px;">
+                    <div>
+                        <a href="@Url.Action("Index", "Home")">Regresar</a>
+                        <p>
+                            @Html.ActionLink("Crear Nuevo Contacto", "Create")
+                        </p>
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.id_contact)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.id_client)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.first_name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.web_address)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.tel)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.puesto)
+                                </th>
+                                <th></th>
+                            </tr>
 
-</table>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.id_contact)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.id_client)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.first_name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.web_address)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.tel)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.puesto)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.id_contact }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.id_contact })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+
+                        @section Scripts {
+                            @Scripts.Render("~/bundles/jqueryval")
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

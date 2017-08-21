@@ -98,8 +98,20 @@ namespace Web
             routes.MapRoute(
                 name: "crear tblReunions1",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "tblReunion/Index/", action = "Create", id = UrlParameter.Optional }
+                defaults: new { controller = "tblReunion", action = "Create", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+               name: "EDITAR tblReunions1",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "tblReunion", action = "Edit", id = UrlParameter.Optional }
+           );
+            routes.MapRoute(
+               name: "ELIMINAR tblReunions1",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "tblReunion", action = "Delete", id = UrlParameter.Optional }
+           );
+
+
 
             routes.MapRoute(
                name: "tblSupport_Tickets",

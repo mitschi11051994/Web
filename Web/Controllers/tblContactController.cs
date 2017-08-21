@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Web;
 using System.Web.Mvc;
 using Web.Models;
 
@@ -44,12 +43,16 @@ namespace Web.Controllers
 
         public ActionResult create()
         {
+            CMDEntities db = new CMDEntities();
+            ViewBag.TipoCliente = new SelectList(db.tblClient, "id_client", "name");
             return View();
         }
 
         [HttpPost]
         public ActionResult create(tblContactViewModel tblContact)
         {
+            CMDEntities db = new CMDEntities();
+            ViewBag.TipoCliente = new SelectList(db.tblClient, "id_client", "name");
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:4701/api/tblContact");
@@ -72,6 +75,8 @@ namespace Web.Controllers
 
         public ActionResult Edit(int id)
         {
+            CMDEntities db = new CMDEntities();
+            ViewBag.TipoCliente = new SelectList(db.tblClient, "id_client", "name");
             tblContactViewModel contactos = null;
 
             using (var client = new HttpClient())
@@ -97,6 +102,8 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Edit(tblContactViewModel tblContact)
         {
+            CMDEntities db = new CMDEntities();
+            ViewBag.TipoCliente = new SelectList(db.tblClient, "id_client", "name");
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:4701/api/tblContact");
