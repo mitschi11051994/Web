@@ -107,6 +107,34 @@ namespace Web.Controllers.API
             return Ok();
         }
 
+        public IHttpActionResult Put(tblClientViewModel tblClient)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Not a valid model");
+
+            using (var ctx = new CMDEntities())
+            {
+                var existingtblClient = ctx.tblClient.Where(s => s.id_client == tblClient.id_client)
+                                                        .FirstOrDefault<tblClient>();
+
+                if (existingtblClient != null)
+                {
+                    existingtblClient.id_client = tblClient.id_client;
+                    existingtblClient.name = tblClient.name;
+                    existingtblClient.web_page = tblClient.web_page;
+                    existingtblClient.direccion = tblClient.direccion;
+                    existingtblClient.tel = tblClient.tel;
+                    existingtblClient.puesto = tblClient.puesto;
+                    ctx.SaveChanges();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+
+            return Ok();
+        }
 
 
 
