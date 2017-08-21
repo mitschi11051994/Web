@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Web.Models.tblReunionViewModel>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CONTACT</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .titulo {
+            color: midnightblue;
+            font-family: 'Bookman Old Style';
+            font-size: 35px;
+            margin-left: 220PX;
+        }
+
+        input,
+        select,
+        textarea, label {
+            width: 200px;
+            height: 30px;
+            position: center;
+        }
+    </style>
+
+</head>
+<body>
+
+    <a href="@Url.Action("SignOut", "Home")">Logout</a>
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-success" style="width:80em; height: 34.5em; margin-left: -0.1em; padding: 1em; padding-top: -1EM;  margin-top: 1em; ">
+                <div class="panel-body" style="width: 50em; margin-left: 0em; margin-top: 0em;  padding: 5px 10px;">
+                    <div>
+                        <a href="@Url.Action("Index", "Home")">Regresar</a>
+                        <p>
+                            @Html.ActionLink("Crear Nuevo Contacto", "Create")
+                        </p>
+
+                        <p>
+                            @Html.ActionLink("Create New Reunion", "Create")
+                        </p>
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.fecha_y_hora)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.id_user)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.esVirtual)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.id_client)
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.fecha_y_hora)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.id_user)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.esVirtual)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.id_client)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.id_reunion }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.id_reunion }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.id_reunion })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                        @section Scripts {
+                            @Scripts.Render("~/bundles/jqueryval")
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

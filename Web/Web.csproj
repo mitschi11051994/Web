@@ -198,13 +198,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CMD.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\API\tblReunionController.cs" />
     <Compile Include="Controllers\API\tblContactController.cs" />
     <Compile Include="Controllers\API\tblClientController.cs" />
+    <Compile Include="Controllers\tblReunionController.cs" />
     <Compile Include="Controllers\tblContactController.cs" />
     <Compile Include="Controllers\tblClientController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\tblReunionViewModel.cs" />
     <Compile Include="Models\tblContactViewModel.cs" />
     <Compile Include="Models\tblClientViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -298,6 +301,9 @@
     <Content Include="Views\tblContact\Index.cshtml" />
     <Content Include="Views\tblContact\create.cshtml" />
     <Content Include="Views\tblContact\Edit.cshtml" />
+    <Content Include="Views\tblReunion\Index.cshtml" />
+    <Content Include="Views\tblReunion\create.cshtml" />
+    <Content Include="Views\tblReunion\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
