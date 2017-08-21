@@ -58,7 +58,7 @@ namespace Web.Controllers.API
             return Ok(clientes);
         }
 
-        public IHttpActionResult GetAllStblClient(string name)
+        public IHttpActionResult GetAlltblClient(string name)
         {
             IList<tblClientViewModel> clientes = null;
 
@@ -75,16 +75,38 @@ namespace Web.Controllers.API
                         puesto = s.puesto
                     }).ToList<tblClientViewModel>();
             }
-
-
             if (clientes.Count == 0)
             {
                 return NotFound();
             }
-
             return Ok(clientes);
-
         }
+
+        //Get action methods of the previous section
+
+        public IHttpActionResult PostNewtblClient(tblClientViewModel cliente)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Invalid data.");
+
+            using (var ctx = new CMDEntities())
+            {
+                ctx.tblClient.Add(new tblClient()
+                {
+                    id_client = cliente.id_client,
+                    name = cliente.name,
+                    web_page = cliente.web_page,
+                    direccion = cliente.direccion,
+                    tel = cliente.tel,
+                    puesto = cliente.puesto
+                });
+
+                ctx.SaveChanges();
+            }
+
+            return Ok();
+        }
+
 
 
 
