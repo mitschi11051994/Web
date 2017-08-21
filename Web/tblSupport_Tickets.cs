@@ -17,8 +17,8 @@ namespace Web
         public int id_Support_Tickets { get; set; }
         public string title { get; set; }
         public string detalle { get; set; }
-        public Nullable<int> id_user { get; set; }
-        public Nullable<int> id_client { get; set; }
+        public int id_user { get; set; }
+        public int id_client { get; set; }
         public string estado { get; set; }
     }
 }
