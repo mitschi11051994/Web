@@ -43,7 +43,18 @@ namespace Web
             routes.MapRoute(
                 name: "crear Cliente",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "tblClient/Index/", action = "Create", id = UrlParameter.Optional }
+                defaults: new { controller = "tblClient", action = "Create", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Editarear Cliente",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "tblClient", action = "Edit", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Delite Cliente",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "tblClient", action = "Delete", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

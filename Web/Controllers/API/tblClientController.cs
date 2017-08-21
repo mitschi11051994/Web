@@ -136,18 +136,20 @@ namespace Web.Controllers.API
             return Ok();
         }
 
-        public IHttpActionResult DeletetblClient(int id)
+        
+
+        public IHttpActionResult Delete(int id)
         {
             if (id <= 0)
                 return BadRequest("Not a valid student id");
 
             using (var ctx = new CMDEntities())
             {
-                var cliente = ctx.tblClient
+                var clientes = ctx.tblClient
                     .Where(s => s.id_client == id)
                     .FirstOrDefault();
 
-                ctx.Entry(cliente).State = System.Data.Entity.EntityState.Deleted;
+                ctx.Entry(clientes).State = System.Data.Entity.EntityState.Deleted;
                 ctx.SaveChanges();
             }
             return Ok();
