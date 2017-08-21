@@ -10,8 +10,9 @@ namespace Web.Controllers.API
 {
     public class tblClientController : ApiController
     {
-        public IHttpActionResult GetAlltblClient()
+        public IHttpActionResult GetAlltblClient(bool includeAddress = false)
         {
+            IList<tblClientViewModel> clientes = null;
             using (var ctx = new CMDEntities())
             {
                 clientes = ctx.tblClient.Select(s => new tblClientViewModel()
@@ -21,15 +22,17 @@ namespace Web.Controllers.API
                     web_page = s.web_page,
                     direccion = s.direccion,
                     tel = s.tel,
-                    puesto= s.puesto}).ToList<tblClientViewModel>();
+                    puesto = s.puesto
+                }).ToList<tblClientViewModel>();
             }
-
             if (clientes.Count == 0)
             {
                 return NotFound();
             }
-
             return Ok(clientes);
         }
+
+
+
     }
 }
