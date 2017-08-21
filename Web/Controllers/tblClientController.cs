@@ -41,5 +41,10 @@ namespace Web.Controllers
             }
             return View(clientes);
         }
+
+        public ActionResult create()
+        {
+            return View();
+        }
     }
 }
