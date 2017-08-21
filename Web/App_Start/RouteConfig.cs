@@ -34,6 +34,9 @@ namespace Web
                 defaults: new { controller = "tblLogin/Index", action = "Create", id = UrlParameter.Optional }
             );
 
+
+
+
             routes.MapRoute(
                 name: "Cliente",
                 url: "{controller}/{action}/{id}",
@@ -57,6 +60,8 @@ namespace Web
                 defaults: new { controller = "tblClient", action = "Delete", id = UrlParameter.Optional }
             );
 
+
+
             routes.MapRoute(
                 name: "tblContacts",
                 url: "{controller}/{action}/{id}",
@@ -66,8 +71,23 @@ namespace Web
             routes.MapRoute(
                 name: "crear tblContacts",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "tblContact/Index/", action = "Create", id = UrlParameter.Optional }
+                defaults: new { controller = "tblContact", action = "Create", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "editar tblContacts",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "tblContact", action = "Edit", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "eliminar tblContacts",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "tblContact", action = "Delete", id = UrlParameter.Optional }
+            );
+
+
+
 
             routes.MapRoute(
                 name: "tblReunions1",
