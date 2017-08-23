@@ -34,9 +34,9 @@
                 <div class="panel-body" style="width: 50em; margin-left: 0em; margin-top: 0em;  padding: 5px 10px;">
                     <div>
                         <a href="@Url.Action("Index", "Home")">Regresar</a>
-                        <p>
+                        <h1>
                             @Html.ActionLink("Crear Nuevo Contacto", "Create")
-                        </p>
+                        </h1>
                         <table class="table">
                             <tr>
                                 <th>
@@ -88,8 +88,7 @@
                                         @Html.DisplayFor(modelItem => item.puesto)
                                     </td>
                                     <td>
-                                        @Html.ActionLink("Edit", "Edit", new { id = item.id_contact }) |
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.id_contact })
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.id_contact }) |@Html.ActionLink("Delete", "Delete", new { id = item.id_contact })
                                     </td>
                                 </tr>
                             }

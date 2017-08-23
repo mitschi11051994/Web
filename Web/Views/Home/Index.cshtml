@@ -1,24 +1,72 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-    </div>
-</div>
+﻿
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .titulo {
+            color: midnightblue;
+            font-family: 'Bookman Old Style';
+            font-size: 35px;
+            margin-left: 220PX;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 420px;
+            height: auto;
+        }
+
+        .profile-img {
+            width: 230px;
+            height: 230px;
+            margin-left: -5em;
+            margin-left: 2em;
+            margin-top: 75px;
+            padding-top: -1em;
+            padding-bottom: -1em;
+            border-radius: 107px 107px 107px 107px;
+            -moz-border-radius: 107px 107px 107px 107px;
+            -webkit-border-radius: 107px 107px 107px 107px;
+            border: 11px solid #96d4c8;
+        }
+    </style>
+
+</head>
+<body>
+        <a href="@Url.Action("SignOut", "Home")">Logout</a>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="panel panel-success" style="width:80em; height: 34.5em; margin-left: -0.1em; padding: 1em; padding-top: -1EM;  margin-top: 1em; ">
+
+                    <div class="panel-body" style="width: 50em; margin-left: 0em; margin-top: 0em;  padding: 5px 10px;">
+                        <div id="apDiv1">
+                            <table border="0">
+                                <tr>
+                                    <td><img class="profile-img" src="https://images.vexels.com/media/users/3/135247/isolated/preview/e70a6296c2a79dc7a56ab05b103f38e8-signo-del-usuario-con-el-fondo-by-vexels.png" align="left" /><a href="@Url.Action("", "tblClient/Index")">Clientes</a></td>
+                                    <td><img class="profile-img" src="http://simplework.es/wp-content/uploads/2016/12/salasdereunion.png" align="left" /> <a href="@Url.Action("", "tblReunion/Index")">Reuniones</a></td>
+                                    <td><img class="profile-img" src="http://alfarored.com/templates/alfarored/images/contacto.png" align="left" /> <a href="@Url.Action("", "tblContact/Index")" />Contactos</td>
+                                    <td><img class="profile-img" src="https://www.apspayroll.com/wp-content/blog-images/checklist-icon-350.png" align="left" /> <a href="@Url.Action("", "tblSupport_Tickets/Index")" />Tiquetes Soporte</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

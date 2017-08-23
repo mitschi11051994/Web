@@ -17,7 +17,7 @@ namespace Web
         public int id_reunion { get; set; }
         public string title { get; set; }
         public Nullable<System.DateTime> fecha_y_hora { get; set; }
-        public int id_user { get; set; }
+        public Nullable<int> id_user { get; set; }
         public Nullable<bool> esVirtual { get; set; }
         public Nullable<int> id_client { get; set; }
     }

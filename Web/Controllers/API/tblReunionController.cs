@@ -20,7 +20,7 @@ namespace Web.Controllers.API
                     id_reunion= s.id_reunion,
                     title = s.title,
                     fecha_y_hora = (s.fecha_y_hora.Value),
-                    id_user = s.id_user,
+                    id_user = s.id_user.Value,
                     esVirtual = s.esVirtual.Value,
                     id_client= s.id_client.Value
                 }).ToList<tblReunionViewModel>();
@@ -44,7 +44,7 @@ namespace Web.Controllers.API
                         id_reunion = s.id_reunion,
                         title = s.title,
                         fecha_y_hora = (s.fecha_y_hora.Value),
-                        id_user = s.id_user,
+                        id_user = s.id_user.Value,
                         esVirtual = s.esVirtual.Value,
                         id_client = s.id_client.Value
                     }).FirstOrDefault<tblReunionViewModel>();
@@ -70,7 +70,7 @@ namespace Web.Controllers.API
                         id_reunion = s.id_reunion,
                         title = s.title,
                         fecha_y_hora = (s.fecha_y_hora.Value),
-                        id_user = s.id_user,
+                        id_user = s.id_user.Value,
                         esVirtual = s.esVirtual.Value,
                         id_client = s.id_client.Value
                     }).ToList<tblReunionViewModel>();

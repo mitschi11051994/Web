@@ -16,9 +16,19 @@ namespace Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Login",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Login", action = "Create", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Content",
+                url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-            
+
 
 
 
@@ -27,12 +37,21 @@ namespace Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "tblLogin", action = "Index", id = UrlParameter.Optional }
             );
-
             routes.MapRoute(
-                name: "Crear_Usuario",
+                name: "Crear Usuario",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "tblLogin/Index", action = "Create", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "tblLogin", action = "Create", id = UrlParameter.Optional }
+            ); routes.MapRoute(
+                 name: "Editar Usuario",
+                 url: "{controller}/{action}/{id}",
+                 defaults: new { controller = "tblLogin", action = "Edit", id = UrlParameter.Optional }
+             ); routes.MapRoute(
+                 name: "Eliminar Usuario",
+                 url: "{controller}/{action}/{id}",
+                 defaults: new { controller = "tblLogin", action = "Delete", id = UrlParameter.Optional }
+             );
+
+
 
 
 
@@ -111,19 +130,35 @@ namespace Web
                defaults: new { controller = "tblReunion", action = "Delete", id = UrlParameter.Optional }
            );
 
-
-
             routes.MapRoute(
-               name: "tblSupport_Tickets",
+               name: "Index Support Ticket",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "tblSupport_Ticket", action = "Index", id = UrlParameter.Optional }
+               defaults: new { controller = "tblSupport_TicketsController", action = "Index", id = UrlParameter.Optional }
            );
 
             routes.MapRoute(
-                name: "crear tblSupport_Tickets",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "tblSupport_Ticket/Index/", action = "Create", id = UrlParameter.Optional }
-            );
+               name: "Create Support Ticket",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "tblSupport_Tickets", action = "Create", id = UrlParameter.Optional }
+           );
+            routes.MapRoute(
+               name: "Edit Support Ticket",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "tblSupport_Tickets", action = "Edit", id = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
+               name: "Delete Support Ticket",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "tblSupport_Tickets", action = "Delete", id = UrlParameter.Optional }
+           );
+
+
+
+
+
+
+
         }
     }
 }

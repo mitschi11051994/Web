@@ -189,29 +189,35 @@
       <DependentUpon>CMD.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="CMD.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>CMD.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="CMD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CMD.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\API\tblSupport_TiketController.cs" />
     <Compile Include="Controllers\API\tblReunionController.cs" />
     <Compile Include="Controllers\API\tblContactController.cs" />
     <Compile Include="Controllers\API\tblClientController.cs" />
+    <Compile Include="Controllers\API\tblLoginController.cs" />
+    <Compile Include="Controllers\API\tblSupport_TicketsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\tblReunionController.cs" />
     <Compile Include="Controllers\tblContactController.cs" />
     <Compile Include="Controllers\tblClientController.cs" />
+    <Compile Include="Controllers\tblLoginController.cs" />
+    <Compile Include="Controllers\tblSupport_TicketsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblSupport_TiketViewModel.cs" />
+    <Compile Include="keyAttribute.cs" />
+    <Compile Include="Models\tblLoginViewModel.cs" />
     <Compile Include="Models\tblReunionViewModel.cs" />
     <Compile Include="Models\tblContactViewModel.cs" />
     <Compile Include="Models\tblClientViewModel.cs" />
+    <Compile Include="Models\tblSupport_TicketsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tblClient.cs">
       <DependentUpon>CMD.tt</DependentUpon>
@@ -236,15 +242,18 @@
       <DependentUpon>CMD.edmx</DependentUpon>
       <LastGenOutput>CMD.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="CMD.edmx.diagram">
+      <DependentUpon>CMD.edmx</DependentUpon>
+    </Content>
     <Content Include="CMD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CMD.edmx</DependentUpon>
       <LastGenOutput>CMD.cs</LastGenOutput>
+      <DependentUpon>CMD.edmx</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -274,9 +283,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CMD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="CMD.edmx.diagram">
-      <DependentUpon>CMD.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -294,7 +300,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\tblClient\Index.cshtml" />
@@ -306,18 +311,24 @@
     <Content Include="Views\tblReunion\Index.cshtml" />
     <Content Include="Views\tblReunion\create.cshtml" />
     <Content Include="Views\tblReunion\Edit.cshtml" />
+    <Content Include="Views\tblSupport_Tickets\Index.cshtml" />
+    <Content Include="Views\tblSupport_Tickets\create.cshtml" />
+    <Content Include="Views\tblSupport_Tickets\Edit.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\tblLogin\create.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

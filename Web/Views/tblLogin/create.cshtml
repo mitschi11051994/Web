@@ -1,0 +1,90 @@
+﻿@model Web.Models.tblLoginViewModel
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LOGIN</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .titulo {
+            color: midnightblue;
+            font-family: 'Bookman Old Style';
+            font-size: 35px;
+            margin-left: 220PX;
+            margin-top: 2em;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 420px;
+            height: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <script>
+            if (ViewBag.showSuccessAlert) {
+                alert('Los datos se grabaron corectamente');
+            }
+        </script>
+        
+        <div class="row">
+            <div class="panel panel-success" style="width: 51em; height: 39em; margin-left: 13em; margin-right: 10em; padding: 3em; margin-top: 3em; ">
+                <div class="panel-heading" style="width: 45em; ">
+                    <img class="profile-img" src="https://www.thehousepr.com/wp-content/themes/the%20house/imgs/login1.png" style="width: 150px; height: 150px; margin-left: 17em; margin-top: 5px; padding-top: -1em; padding-bottom: -1em;">
+                </div>
+                <div class="panel-body" style="width: 80em; margin-left: -7em;">
+                    <h1 class="titulo">CREATE NEW USER</h1>                        
+
+                    @using (Html.BeginForm())
+                    {
+                        
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Username, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Username)
+                                    @Html.ValidationMessageFor(model => model.Username)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Password)
+                                    @Html.ValidationMessageFor(model => model.Password)
+                                </div>
+                            </div>                            
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Create" class="btn btn-default" style="background-color: #35b6b2; width:30em; height:3.3em;" />
+                                </div>
+                            </div>
+                        </div>
+                                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+    <h4><a href="@Url.Action("Login", "Home")">Back Login</a></h4>
+
+</body>
+</html>
+

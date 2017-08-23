@@ -11,12 +11,13 @@ namespace Web
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tblLogin
     {
         public int id_user { get; set; }
         public string Username { get; set; }
+        [DataType(DataType.Password)]
         public string Password { get; set; }
-        public string Role { get; set; }
     }
 }

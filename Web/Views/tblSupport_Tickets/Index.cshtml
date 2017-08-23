@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Web.Models.tblReunionViewModel>
+﻿@model IEnumerable<Web.Models.tblSupport_TicketsViewModel>
 
 <html>
 <head>
@@ -36,7 +36,7 @@
                         <a href="@Url.Action("Index", "Home")">Regresar</a>
 
                         <h1>
-                            @Html.ActionLink("Create New Reunion", "Create")
+                            @Html.ActionLink("Create New Ticket", "Create")
                         </h1>
                         <table class="table">
                             <tr>
@@ -44,16 +44,16 @@
                                     @Html.DisplayNameFor(model => model.title)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.fecha_y_hora)
+                                    @Html.DisplayNameFor(model => model.detalle)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.id_user)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.esVirtual)
+                                    @Html.DisplayNameFor(model => model.id_client)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.id_client)
+                                    @Html.DisplayNameFor(model => model.estado)
                                 </th>
                                 <th></th>
                             </tr>
@@ -65,19 +65,19 @@
                                         @Html.DisplayFor(modelItem => item.title)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.fecha_y_hora)
+                                        @Html.DisplayFor(modelItem => item.detalle)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.id_user)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.esVirtual)
-                                    </td>
-                                    <td>
                                         @Html.DisplayFor(modelItem => item.id_client)
                                     </td>
                                     <td>
-                                        @Html.ActionLink("Edit", "Edit", new { id = item.id_reunion }) | @Html.ActionLink("Delete", "Delete", new { id = item.id_reunion })
+                                        @Html.DisplayFor(modelItem => item.estado)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.id_Support_Tickets }) | @Html.ActionLink("Delete", "Delete", new { id = item.id_Support_Tickets })
                                     </td>
                                 </tr>
                             }
@@ -93,4 +93,3 @@
     </div>
 </body>
 </html>
-
