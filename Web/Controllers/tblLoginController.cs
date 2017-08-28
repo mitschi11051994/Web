@@ -35,7 +35,6 @@ namespace Web.Controllers
                 if (result.IsSuccessStatusCode)
                 {
                     return RedirectToAction("Create");
-                    ViewBag.showSuccessAlert = true;
                 }
             }
 
